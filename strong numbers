@@ -14,12 +14,14 @@ def find_strong_numbers(num_list):
     for i in range(len(num_list)):
         f=0
         temp=num_list[i]
+        if (num_list[i]==0):
+            continue
         while(num_list[i]!=0):
             d=num_list[i]%10
             f=f+factorial(d)
             num_list[i]=num_list[i]//10
         if(f==temp):
-            strong_num_list.append(str(temp))
+            strong_num_list.append(temp)
         else:
             continue
     return strong_num_list
